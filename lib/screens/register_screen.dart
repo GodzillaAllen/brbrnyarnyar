@@ -127,12 +127,32 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  SizedBox(
-                    height: 200,
-                    child: Image.asset(
-                      "assets/logo.png",
-                      fit: BoxFit.contain,
-                    ),
+                  Stack(
+                    children: [
+                      const CircleAvatar(
+                        radius: 80.0,
+                        backgroundColor: Colors.white,
+                        backgroundImage: AssetImage(
+                          "assets/profile.jpg",
+                        ),
+                      ),
+                      Positioned(
+                          bottom: 20.0,
+                          right: 20.0,
+                          child: InkWell(
+                            onTap: () {
+                              showModalBottomSheet(
+                                context: context,
+                                builder: ((builder) => bottomSheet()),
+                              );
+                            },
+                            child: const Icon(
+                              Icons.camera_alt,
+                              color: Colors.green,
+                              size: 20.0,
+                            ),
+                          ))
+                    ],
                   ),
                   const SizedBox(height: 45),
                   nameField,
@@ -148,6 +168,53 @@ class _RegisterScreenState extends State<RegisterScreen> {
             ),
           ),
         )),
+      ),
+    );
+  }
+
+  Widget bottomSheet() {
+    return Container(
+      height: 100.0,
+      width: MediaQuery.of(context).size.width,
+      margin: const EdgeInsets.symmetric(
+        horizontal: 20,
+        vertical: 20,
+      ),
+      child: Column(
+        children: [
+          const Text(
+            "Choose Profile Photo",
+            style: TextStyle(
+              fontSize: 20.0,
+            ),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              TextButton.icon(
+                onPressed: () {},
+                icon: const Icon(
+                  Icons.camera,
+                  color: Colors.teal,
+                ),
+                label: const Text(
+                  "Camera",
+                ),
+              ),
+              TextButton.icon(
+                onPressed: () {},
+                icon: const Icon(
+                  Icons.photo,
+                  color: Colors.teal,
+                ),
+                label: const Text("Gallery"),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }
