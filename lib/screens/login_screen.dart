@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:login_reg_form_for_bei_chat/screens/home_screen.dart';
 import 'package:login_reg_form_for_bei_chat/screens/register_screen.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -135,7 +136,14 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   const SizedBox(height: 20),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (builder) => const HomeScreen(),
+                        ),
+                      );
+                    },
                     child: Center(
                       child: Text(
                         "Forgot Password?",
