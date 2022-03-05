@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:login_reg_form_for_bei_chat/components/button_widger.dart';
 import 'package:login_reg_form_for_bei_chat/components/numbers_widget.dart';
 import 'package:login_reg_form_for_bei_chat/components/profile_page_appbar.dart';
 import 'package:login_reg_form_for_bei_chat/components/profile_widget.dart';
@@ -35,6 +36,10 @@ class _ProfilePageState extends State<ProfilePage> {
           const SizedBox(
             height: 24,
           ),
+          editAndSettingWidget(),
+          const SizedBox(
+            height: 24,
+          ),
           const NumbersWidget(),
         ],
       ),
@@ -53,6 +58,23 @@ class _ProfilePageState extends State<ProfilePage> {
           Text(
             profile.email,
             style: const TextStyle(color: Colors.grey),
+          ),
+        ],
+      );
+
+  Widget editAndSettingWidget() => Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          ButtonWidget(
+            text: 'Edit Profile',
+            onclicked: () {},
+          ),
+          const SizedBox(
+            width: 10,
+          ),
+          ButtonWidget(
+            text: 'Edit smth',
+            onclicked: () {},
           ),
         ],
       );
