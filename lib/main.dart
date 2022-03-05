@@ -12,9 +12,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Bei-Chat',
       theme: ThemeData(
         primarySwatch: Colors.green,
+        dividerColor: Colors.black,
       ),
       home: const LoginScreen(),
     );

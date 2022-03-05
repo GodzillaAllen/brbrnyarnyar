@@ -142,8 +142,8 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
                       showModal();
                     },
                     child: Container(
-                      height: 40,
-                      width: 40,
+                      height: 30,
+                      width: 30,
                       decoration: BoxDecoration(
                         color: Colors.blueGrey,
                         borderRadius: BorderRadius.circular(30),
@@ -156,35 +156,70 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
                     ),
                   ),
                   const SizedBox(
+                    width: 5,
+                  ),
+                  Container(
+                    height: 30,
+                    width: 30,
+                    decoration: BoxDecoration(
+                      color: Colors.blueGrey,
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                    child: const Icon(
+                      Icons.camera_alt,
+                      color: Colors.white,
+                      size: 21,
+                    ),
+                  ),
+                  const SizedBox(
                     width: 16,
                   ),
                   Expanded(
                     child: TextField(
+                      autofocus: false,
                       decoration: InputDecoration(
+                          filled: true,
+                          fillColor: Colors.grey[50],
+                          contentPadding: const EdgeInsets.only(
+                              left: 14.0, bottom: 8.0, top: 8.0),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: const BorderSide(color: Colors.white),
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          enabledBorder: UnderlineInputBorder(
+                            borderSide: const BorderSide(color: Colors.white),
+                            borderRadius: BorderRadius.circular(20),
+                          ),
                           hintText: "Type message...",
                           hintStyle: TextStyle(color: Colors.grey.shade500),
+                          suffixIcon: Padding(
+                            padding: const EdgeInsets.only(right: 10),
+                            child: Icon(
+                              Icons.emoji_emotions,
+                              color: Colors.grey.shade400,
+                              size: 30,
+                            ),
+                          ),
                           border: InputBorder.none),
                     ),
-                  )
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      showModal();
+                    },
+                    child: Container(
+                      padding: const EdgeInsets.only(right: 15),
+                      child: const Icon(
+                        Icons.send,
+                        color: Colors.green,
+                        size: 40,
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
           ),
-          Align(
-            alignment: Alignment.bottomRight,
-            child: Container(
-              padding: const EdgeInsets.only(right: 30, bottom: 50),
-              child: FloatingActionButton(
-                onPressed: () {},
-                child: const Icon(
-                  Icons.send,
-                  color: Colors.white,
-                ),
-                backgroundColor: Colors.green,
-                elevation: 0,
-              ),
-            ),
-          )
         ],
       ),
     );

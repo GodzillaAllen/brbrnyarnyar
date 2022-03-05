@@ -12,25 +12,25 @@ class ChatPage extends StatefulWidget {
 class _ChatPageState extends State<ChatPage> {
   List<ChatUsers> chatUsers = [
     ChatUsers(
-        text: "text",
-        secondaryText: "secondaryText",
-        image: "image",
-        time: "time"),
+        text: "barbie",
+        secondaryText: "sex tonight",
+        image: "assets/profile.jpg",
+        time: "now"),
+    ChatUsers(
+        text: "小鸡",
+        secondaryText: "爱性药",
+        image: "assets/profile.jpg",
+        time: "now"),
     ChatUsers(
         text: "text",
         secondaryText: "secondaryText",
         image: "image",
-        time: "time"),
+        time: "now"),
     ChatUsers(
         text: "text",
         secondaryText: "secondaryText",
         image: "image",
-        time: "time"),
-    ChatUsers(
-        text: "text",
-        secondaryText: "secondaryText",
-        image: "image",
-        time: "time"),
+        time: "25 jan"),
     ChatUsers(
         text: "text",
         secondaryText: "secondaryText",
@@ -77,10 +77,21 @@ class _ChatPageState extends State<ChatPage> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const Text(
-                        "Chats",
-                        style: TextStyle(
-                            fontSize: 30, fontWeight: FontWeight.bold),
+                      Row(
+                        children: const [
+                          CircleAvatar(
+                            backgroundImage: AssetImage("assets/profile.jpg"),
+                            maxRadius: 20,
+                          ),
+                          SizedBox(
+                            width: 12,
+                          ),
+                          Text(
+                            "Chats",
+                            style: TextStyle(
+                                fontSize: 30, fontWeight: FontWeight.bold),
+                          ),
+                        ],
                       ),
                       Container(
                         padding: const EdgeInsets.only(

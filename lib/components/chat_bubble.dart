@@ -38,7 +38,8 @@ class _ChatBubbleState extends State<ChatBubble> {
                 ? Colors.white
                 : Colors.grey.shade400),
           ),
-          padding: const EdgeInsets.all(16),
+          padding:
+              const EdgeInsets.only(left: 15, right: 16, top: 10, bottom: 10),
           child: Text(widget.chatMessage.message),
         ),
       ),
